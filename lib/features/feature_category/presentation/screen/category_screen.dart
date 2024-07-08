@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -15,7 +14,6 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-
   List<String> popularCoursesDataList = [
     "https://static.vecteezy.com/system/resources/thumbnails/009/763/252/small_2x/back-to-school-banner-design-with-colorful-funny-school-tool-vector.jpg",
     "https://www.shutterstock.com/shutterstock/photos/2198869609/display_1500/stock-vector-back-to-school-square-banner-school-supplies-stationery-icons-funny-colorful-organic-shapes-2198869609.jpg",
@@ -26,50 +24,76 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-    final currentCount = ((MediaQuery.of(context).size.width - 300) ~/ 250).toInt();
+    final currentCount =
+        ((MediaQuery.of(context).size.width - 350) ~/ 250).toInt();
     const minCount = 4;
 
-    return SafeArea(child: Scaffold(
-      body: Responsive(
-        mobile: Container(),
-        desktop: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: max(currentCount, minCount),childAspectRatio: 9/16, mainAxisSpacing: 60, crossAxisSpacing: 20,),
-          itemCount: 5,
-          itemBuilder: (context, index) => Container(
-            color: Colors.amberAccent,
-          child: Column(
-            children: [
-              Image.network(popularCoursesDataList[index],fit: BoxFit.cover,width: double.infinity, height: 200,),
-              Row(
+    return SafeArea(
+      child: Scaffold(
+        body: Responsive(
+          mobile: Container(),
+          desktop: GridView.builder(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: max(currentCount, minCount),
+              childAspectRatio: 9 / 16,
+              mainAxisSpacing: 60,
+              crossAxisSpacing: 20,
+            ),
+            itemCount: 5,
+            itemBuilder: (context, index) => Container(
+              height: 400,
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade300,
+                    blurRadius: 3.0,
+                    spreadRadius: 3.0,
+                  )
+                ],
+              ),
+              child: Column(
                 children: [
-                  Text("مشاوره خانواده",style: TextStyle(fontWeight: FontWeight.w600),),
+                  Image.network(
+                    popularCoursesDataList[index],
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                    height: 200,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        "مشاوره خانواده",
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 11,
+                        color: Colors.grey.shade300,
+                      ),
+                      maxLines: 20,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ],
               ),
-              RichText(
-                text: TextSpan(
-                text: '',
-                style: DefaultTextStyle.of(context).style,
-                children: <TextSpan>[
-                  TextSpan(
-                      text: 'تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق',
-                      style: TextStyle(fontWeight: FontWeight.w400,fontSize: 11, color: Colors.grey,),),
-                  TextSpan(text: ' world!'),
-                ],
-              ),
-              ),
-              Text(
-                "",style: TextStyle(
-                  fontSize: 10,
-                  color: Colors.grey.shade300,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ],
+            ),
           ),
-        ),),
+        ),
       ),
-    ),
     );
   }
 }
