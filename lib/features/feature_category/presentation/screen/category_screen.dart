@@ -56,6 +56,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 ],
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.network(
                     popularCoursesDataList[index],
@@ -75,17 +76,19 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 11,
-                        color: Colors.grey.shade300,
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 11,
+                          color: Colors.grey.shade300,
+                        ),
+                        maxLines: 20,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      maxLines: 20,
-                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ],
