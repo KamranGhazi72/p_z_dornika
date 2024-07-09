@@ -95,26 +95,35 @@ class _MainWrapperState extends State<MainWrapper> {
         ),
       ),
       desktop: Scaffold(
-        body: Row(
-          children: [
-            Container(margin: const EdgeInsets.only(top: 15.0, bottom: 15.0, right: 30.0),
-                padding: const EdgeInsets.all(25.0),
-                width: 300,
-                decoration: BoxDecoration(
-                  color: MyThemes.lightTheme.primaryColor,
-                  borderRadius: BorderRadius.circular(16.0),
-                ),child: WebSidebar(),
+        body: Center(
+          child: Container(
+            constraints: const BoxConstraints(
+              maxWidth: 1400,
             ),
-            Expanded(
-              child: BlocBuilder<WebSidebarCubit, int>(
-                builder: (context, count) => Padding(
-                  padding: const EdgeInsets.only(
-                      top: 15.0, bottom: 15.0, left: 30.0, right: 10.0),
-                  child: desktopScreens[count],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(margin: const EdgeInsets.only(top: 15.0, bottom: 15.0, right: 30.0),
+                    padding: const EdgeInsets.all(25.0),
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: MyThemes.lightTheme.primaryColor,
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),child: WebSidebar(),
                 ),
-              ),
+                Expanded(
+                  child: BlocBuilder<WebSidebarCubit, int>(
+                    builder: (context, count) => Padding(
+                      padding: const EdgeInsets.only(
+                          top: 15.0, bottom: 15.0, left: 30.0, right: 10.0),
+                      child: desktopScreens[count],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

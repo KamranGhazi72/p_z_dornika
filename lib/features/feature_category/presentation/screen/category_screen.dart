@@ -24,8 +24,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size.width;
     final currentCount =
-        ((MediaQuery.of(context).size.width - 350) ~/ 250).toInt();
+        ((size - 350) ~/ 250).toInt();
     const minCount = 4;
 
     return SafeArea(
@@ -35,7 +36,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           desktop: GridView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 5.0),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: max(currentCount, minCount),
+              crossAxisCount: size > 1400 ? 5 : max(currentCount, minCount),
               childAspectRatio: 9 / 16,
               mainAxisSpacing: 60,
               crossAxisSpacing: 20,
