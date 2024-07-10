@@ -2,13 +2,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:pouya_zehn_dornika/config/my_theme.dart';
-import 'package:pouya_zehn_dornika/locator.dart';
 import 'common/blocs/bottom_nav_cubit.dart';
 import 'common/blocs/web_sidebar_cubit.dart';
 import 'common/widgets/main_wrapper.dart';
+import 'config/my_theme.dart';
+import 'features/feature_course_detail/presentation/screen/course_detail_screen.dart';
 import 'features/feature_intro/presentation/bloc/splash_cubit/splash_cubit.dart';
 import 'features/feature_intro/presentation/screens/splash_screen.dart';
+import 'locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
       ],
       routes: {
         MainWrapper.routeName: (context)=> MainWrapper(),
-        // MobileSignUpScreen.routeName: (context)=> MobileSignUpScreen(),
+        CourseDetailScreen.routeName: (context)=> CourseDetailScreen(),
         // AllProductsScreen.routeName: (context)=> AllProductsScreen(),
       },
       debugShowCheckedModeBanner: false,

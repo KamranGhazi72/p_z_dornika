@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pouya_zehn_dornika/features/feature_course_detail/presentation/screen/course_detail_screen.dart';
 import '../../../../common/widgets/footer.dart';
 import '../../../../config/my_theme.dart';
 import '../../../../config/responsive.dart';
@@ -42,57 +43,61 @@ class _CategoryScreenState extends State<CategoryScreen> {
               crossAxisSpacing: 20,
             ),
             itemCount: 5,
-            itemBuilder: (context, index) => Container(
-              height: 400,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.shade300,
-                    blurRadius: 3.0,
-                    spreadRadius: 3.0,
-                  )
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.network(
-                    popularCoursesDataList[index],
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: 200,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
-                    child: SizedBox(
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () =>
+                  Navigator.pushNamed(context, CourseDetailScreen.routeName),
+              child: Container(
+                height: 400,
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade300,
+                      blurRadius: 3.0,
+                      spreadRadius: 3.0,
+                    )
+                  ],
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.network(
+                      popularCoursesDataList[index],
+                      fit: BoxFit.cover,
                       width: double.infinity,
-                      child: Text(
-                        "مشاوره خانواده",
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      height: 200,
                     ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 11,
-                          color: Colors.grey.shade300,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          "مشاوره خانواده",
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        maxLines: 20,
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                  ),
-                ],
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق تهتهخ بیهثهی لتلهقتله بثهبثه یثهیثصه ثصیقهث ملذ خقنقفن قثخث ثقخثقث ثنقث سقفشیقفس هحمهنعح سیلس نعهعجحن صفثیقبص همکهعجح شسفیبق',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 11,
+                            color: Colors.grey.shade300,
+                          ),
+                          maxLines: 20,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

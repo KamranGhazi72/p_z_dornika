@@ -27,7 +27,7 @@ class MyThemes {
 
   static final lightTheme = ThemeData(
     textTheme: const TextTheme(
-      titleMedium: TextStyle(fontFamily: "Vazir",fontSize: 20,fontWeight: FontWeight.bold),
+      titleMedium: TextStyle(fontFamily: "Vazir",fontSize: 16,fontWeight: FontWeight.bold),
       bodyMedium: TextStyle(fontFamily: "Vazir",fontSize: 15,fontWeight: FontWeight.w400),
     ),
     // highlightColor: Colors.indigo,
