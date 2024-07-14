@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pouya_zehn_dornika/config/my_theme.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../config/my_theme.dart';
 import '../../../../config/responsive.dart';
 
 class CourseDetailScreen extends StatefulWidget {
@@ -23,6 +24,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
 
         desktop: Center(
           child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
             constraints: const BoxConstraints(
               maxWidth: 1400,
             ),
@@ -101,11 +103,54 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                                       Text("1,990,000 تومان",style:  MyThemes.lightTheme.textTheme.bodyLarge),
                                     ],
                                   ),
+                                  const SizedBox(height: 10.0),
                                   Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      ElevatedButton(onPressed: () {
+                                      SizedBox(
+                                        height: 50,
+                                        child: ElevatedButton(onPressed: () {
 
-                                      }, child: Text(""),),
+                                        }, child: Row(
+                                          children: [
+                                            SvgPicture.asset("assets/images/cart-icon.svg",
+                                              colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                                              width: 22,
+                                              height: 22,
+                                            ),
+                                            SizedBox(width: 10.0),
+                                            Text("افزودن دوره به سبد سفارش",
+                                              style: MyThemes.lightTheme.textTheme.bodyMedium?.copyWith(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                          style: ElevatedButton.styleFrom(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(6.0),
+                                            ),
+                                            backgroundColor: MyThemes.lightTheme.primaryColorLight,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 50,
+                                        width: 50,
+                                        child: ElevatedButton(onPressed: () {
+
+                                        }, child: SvgPicture.asset("assets/images/cart-icon.svg",
+                                          colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
+                                        ),
+                                          style: ElevatedButton.styleFrom(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(6.0),
+                                            ),
+                                            backgroundColor: Colors.white,
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
 
